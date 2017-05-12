@@ -61,28 +61,30 @@ class Home extends Component {
         </div>
         <div className="Home-body">
           <p>
-            Hello.
+            Hello,
           </p>
           <p>
-            My name is David Byttow and I’m seeking to represent California's District 10 in the United States House of Representatives.
+            My name is David Byttow and I’m seeking to represent <b>California District 10</b> in the United States House of Representatives by unseating Rep. Jeff Denham (R) in 2018.
           </p>
           <p>
-            I grew up in Chicago, Illinois and relocated to California at the age of 19 to pursue my career dreams. Over that time, I worked as an engineer and leader at companies like Google and built successful companies.
+            I grew up in Chicago, IL and moved to California at 19 to pursue a career in software engineering. Since then, I’ve worked as an engineering leader at companies like Google and Square and started several companies of my own.
           </p>
           <p>
-            I am a technologist, <b>not a politician</b>. I am an outsider, <b>not a part of the establishment</b>.
+            I am a fighter, <b>not a follower</b>.<br/>
+            I am a technologist, <b>not a politician</b>.<br/>
+            I am an outsider, <b>not a part of the establishment</b>.<br/>
           </p>
           <p>
-            Like everyone, I am frustrated with the state of our government and those that represent us. Their priorities are misaligned with what Americans need. We can build a fair, progressive future that also prioritizes jobs and economic growth for middle and working class.
+            I’m angry with the state of our government. The Republican agenda is misaligned with the actual needs of the middle class. I believe we can embrace a bright, progressive future and agenda centered around economic growth and job creation for hard-working citizens.
           </p>
           <p>
-            I’m a progressive thinker and I will run as a Democrat against Rep. Jeff Denham. I’m far less interested in partisan politics and far more concerned with working hard to provide economic growth and opportunity for all.
+            As a progressive leader, I will run as a Democrat. I’m far less interested in partisan politics and far more concerned with holding our government accountable and serving the needs of American citizens.
           </p>
           <p>
-            America is a global superpower and cultural trendsetter, and there is no reason why we can’t break down the economic, social, and educational barriers to give every American the opportunity to reach their full potential when they work for it.
+            America is a global superpower and cultural trend-setter, we can break down the economic, social, and educational barriers to give every free American the opportunities they deserve.
           </p>
           <p>
-            The election for California’s District 10 House seat is in <strong>{DAYS_LEFT} days</strong>, but I am starting small and starting now.
+            The election for California’s District 10 House seat is in <strong>{DAYS_LEFT} days</strong>, and I am starting small and starting now.
           </p>
           <p>
             Sincerely,

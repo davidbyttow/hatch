@@ -19,6 +19,7 @@ b, strong {
   display: flex;
   flex-direction: row;
   margin: 64px;
+  justify-content: center;
 
   @media #{$viewportLarge} {
     flex-direction: column;
