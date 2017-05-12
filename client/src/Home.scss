@@ -1,0 +1,54 @@
+@import 'const.scss';
+
+a {
+  text-decoration: underline;
+  color: #000;
+}
+
+p {
+  @include font-Maison-Md();
+  font-size: 16px;
+  line-height: 24px;
+}
+
+b, strong {
+  @include font-Maison-Bd()
+}
+
+.Home {
+  display: flex;
+  flex-direction: row;
+  margin: 64px;
+
+  @media #{$viewportLarge} {
+    flex-direction: column;
+    margin: 16px;
+    align-items: center;
+  }
+
+  &-header {
+  }
+
+  &-body {
+    max-width: 680px;
+    margin-left: 64px;
+
+    @media #{$viewportLarge} {
+      margin: 16px;
+    }
+  }
+
+  &-image {
+    background-image: url('./assets/d@2x.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+  }
+
+  &-signature {
+    background-image: url('./assets/sig.png');
+    background-size: cover;
+    width: 85px;
+    height: 82px;
+  }
+}

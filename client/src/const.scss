@@ -1,0 +1,44 @@
+@import 'fonts.scss';
+
+@mixin transition($transitions...) {
+  $unfoldedTransitions: ();
+  @each $transition in $transitions {
+    $unfoldedTransitions: append($unfoldedTransitions, unfoldTransition($transition), comma);
+  }
+  -webkit-transition: $unfoldedTransitions;
+  transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition($transition) {
+  $property: all;
+  $duration: 300ms;
+  $easing: ease-in-out;
+  $delay: null;
+  $defaultProperties: ($property, $duration, $easing, $delay);
+
+  $unfoldedTransition: ();
+  @for $i from 1 through length($defaultProperties) {
+    $p: null;
+    @if $i <= length($transition) {
+      $p: nth($transition, $i)
+    } @else {
+      $p: nth($defaultProperties, $i)
+    }
+    $unfoldedTransition: append($unfoldedTransition, $p);
+  }
+
+  @return $unfoldedTransition;
+}
+
+$viewportRetina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)";
+$viewportLarge: "only screen and (max-width: 1024px)";
+$viewportMedium: "only screen and (max-width: 800px)";
+$viewportSmall: "only screen and (max-width: 480px)";
+
+@mixin theme-property($property, $key) {
+  @each $name, $theme in $themes {
+    &-theme--#{$name} {
+      #{$property}: map-get($theme, $key);
+    }
+  }
+}

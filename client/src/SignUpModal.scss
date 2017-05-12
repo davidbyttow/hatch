@@ -1,0 +1,142 @@
+@import 'const.scss';
+
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 100;
+  transition: opacity 0.5s;
+  opacity: 1;
+}
+
+.Hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Inner-Modal {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+
+  @media #{$viewportSmall} {
+    justify-content: flex-start;
+  }
+
+  &-name-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @media #{$viewportSmall} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &-captcha {
+    margin-top: 25px;
+    width: 100%;
+  }
+}
+
+.form {
+  width: 560px;
+  overflow: hidden;
+  @media #{$viewportSmall} {
+
+  }
+}
+
+.Register-button {
+  border: 2px #000 solid;
+  margin-top: 34px;
+  background-color: #FFF;
+  height: 56px;
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  @include font-Maison-Bd();
+
+  &:hover {
+    background-color: #000;
+    color: #FFF;
+  }
+  &:disabled {
+    background-color: #EEE;
+    color: #CCC;
+    border: none;
+  }
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+.dividing-line {
+  width: 4px;
+  height: 40px;
+  background-color: #000;
+  margin-right: 22px;
+  @media #{$viewportSmall} {
+    height: 2px;
+    width: 100%;
+    background-color: #000;
+    margin-right: 0;
+  }
+}
+
+.close-button {
+  background: rgba(0,0,0,0);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  outline: none;
+}
+
+.TextInput {
+  font-size: 16px;
+  line-height: 28px;
+  border: 0;
+  outline: 0;
+  width: 100%;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+.TextInput::placeholder {
+  color: #333;
+  opacity: 0.4;
+}
+
+.Thanks {
+  max-width: 560px;
+  &-header {
+    font-size: 36px;
+    line-height: 28px;
+    color: #333333;
+    margin-bottom: 16px;
+    @include font-Maison-Bd();
+  }
+
+  &-message {
+    font-size: 18px;
+    line-height: 28px;
+    color: #333333;
+    margin-bottom: 16px;
+    @include font-Maison-Md();
+  }
+
+}
