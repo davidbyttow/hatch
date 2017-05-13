@@ -1,6 +1,8 @@
 import cx from 'classnames';
 import React, { Component, PropTypes } from 'react';
 
+import { rpc } from './net';
+
 import './Home.css';
 
 const ONE_DAY = 24 * 60 * 60 * 1000;
@@ -39,24 +41,42 @@ class Home extends Component {
   state = {
     name: '',
     email: '',
+    submitted: false,
   };
+
+  _validated() {
+    return this.state.email.length > 4 && this.state.name.length > 4;
+  }
+
+  _handleSubmit = () => {
+    const { email, name } = this.state;
+    rpc('/api/join', { email, name });
+    this.setState({ submitted: true });
+  }
 
   render() {
     return (
       <div className="Home">
         <div className="Home-header">
-            <div className="Home-image" />
+          <div className="Home-image" />
+          <p></p>
           <form className="Home-form">
             <TextInput
-              placeholder="Your email"
+              placeholder="Type your email"
               className="Home-input"
-              value={this.state.name}
+              value={this.state.email}
               onChange={e => this.setState({ email: e.target.value })} />
             <TextInput
-              placeholder="Your name"
+              placeholder="Type your name"
               className="Home-input"
               value={this.state.name}
               onChange={e => this.setState({ name: e.target.value })} />
+            <button
+              className="Home-button"
+              onClick={this._handleSubmit}
+              disabled={!this._validated()}>
+              Subscribe to David
+            </button>
           </form>
         </div>
         <div className="Home-body">
