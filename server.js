@@ -13,8 +13,8 @@ if (isProd) {
   app.use(express.static('client/build'));
 }
 
-const LIST_ID = '4438d3a335';
-const MAILCHIMP_API_KEY = 'f2ebb8fc2538ba08120ea0da070fa8c7-us15';
+const LIST_ID = 'fbd93928bf';
+const MAILCHIMP_API_KEY = '83ffb81bbb5be6a9198f77892e614f85-us14-us15';
 const LIST_MEMBERS_PATH = `lists/${LIST_ID}/members`;
 
 const mailApi = new Mailchimp(MAILCHIMP_API_KEY);

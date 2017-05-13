@@ -45,8 +45,8 @@ class Home extends Component {
     return (
       <div className="Home">
         <div className="Home-header">
-          <div className="Home-image" />
-          {/* <form className="Home-form">
+            <div className="Home-image" />
+          <form className="Home-form">
             <TextInput
               placeholder="Your email"
               className="Home-input"
@@ -57,7 +57,7 @@ class Home extends Component {
               className="Home-input"
               value={this.state.name}
               onChange={e => this.setState({ name: e.target.value })} />
-            </form> */}
+          </form>
         </div>
         <div className="Home-body">
           <p>
