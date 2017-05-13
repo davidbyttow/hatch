@@ -1,6 +1,6 @@
 @import 'const.scss';
 
-@keyframes show-image {
+@keyframes fadeInLeft {
   0% {
     transform: translateX(-20px);
     opacity: 0;
@@ -11,7 +11,7 @@
   }
 }
 
-@keyframes show-body {
+@keyframes fadeInBottom {
   0% {
     transform: translateY(20px);
     opacity: 0;
@@ -22,7 +22,7 @@
   }
 }
 
-@keyframes show-form {
+@keyframes fadeInTop {
   0% {
     transform: translateY(-20px);
     opacity: 0;
@@ -63,22 +63,28 @@ b, strong {
   &-header {
     margin: 16px;
     max-width: 200px;
-    animation: 500ms ease-out 200ms 1 show-image;
+    animation: 500ms ease-out 200ms 1 fadeInLeft;
     animation-fill-mode: forwards;
     opacity: 0;
 
     @media #{$viewportLarge} {
       width: 100%;
       max-width: 680px;
+      animation: 500ms ease-out 200ms 1 fadeInTop;
+      animation-fill-mode: forwards;
     }
   }
 
   &-form {
     display: flex;
     flex-direction: column;
-    animation: 500ms ease-out 1s 1 show-form;
-    animation-fill-mode: forwards;
     opacity: 0;
+    animation: 500ms ease-out 1s 1 fadeInTop;
+    animation-fill-mode: forwards;
+    @media #{$viewportLarge} {
+      animation: 500ms ease-out 1s 1 fadeInLeft;
+      animation-fill-mode: forwards;
+    }
   }
 
   &-input {
@@ -118,12 +124,14 @@ b, strong {
   &-body {
     max-width: 680px;
     margin-left: 64px;
-    animation: 500ms ease-out 400ms 1 show-body;
+    animation: 500ms ease-out 400ms 1 fadeInBottom;
     animation-fill-mode: forwards;
     opacity: 0;
 
     @media #{$viewportLarge} {
       margin: 16px;
+      animation: 500ms ease-out 200ms 1 fadeInBottom;
+      animation-fill-mode: forwards;
     }
   }
 

@@ -60,24 +60,26 @@ class Home extends Component {
         <div className="Home-header">
           <div className="Home-image" />
           <p></p>
-          <form className="Home-form">
-            <TextInput
-              placeholder="Type your email"
-              className="Home-input"
-              value={this.state.email}
-              onChange={e => this.setState({ email: e.target.value })} />
-            <TextInput
-              placeholder="Type your name"
-              className="Home-input"
-              value={this.state.name}
-              onChange={e => this.setState({ name: e.target.value })} />
-            <button
-              className="Home-button"
-              onClick={this._handleSubmit}
-              disabled={!this._validated()}>
-              Subscribe to David
-            </button>
-          </form>
+          { !this.state.submitted ? (
+            <form className="Home-form">
+              <TextInput
+                placeholder="Type your email"
+                className="Home-input"
+                value={this.state.email}
+                onChange={e => this.setState({ email: e.target.value })} />
+              <TextInput
+                placeholder="Type your name"
+                className="Home-input"
+                value={this.state.name}
+                onChange={e => this.setState({ name: e.target.value })} />
+              <button
+                className="Home-button"
+                onClick={this._handleSubmit}
+                disabled={!this._validated()}>
+                Subscribe to David
+              </button>
+            </form>
+          ) : <p>Thank you! An email was sent to {this.state.email}.</p>}
         </div>
         <div className="Home-body">
           <p>
