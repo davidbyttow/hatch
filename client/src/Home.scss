@@ -48,6 +48,28 @@ b, strong {
   @include font-Maison-Bd()
 }
 
+.HeroAvatar {
+  &-outerRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &-innerRing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+
+  &-image {
+    background-image: url('./assets/dc@2x.jpg');
+    background-size: cover;
+  }
+}
+
 .Home {
   display: flex;
   flex-direction: row;
@@ -81,6 +103,7 @@ b, strong {
     opacity: 0;
     animation: 500ms ease-out 1s 1 fadeInTop;
     animation-fill-mode: forwards;
+    margin-top: 24px;
     @media #{$viewportLarge} {
       animation: 500ms ease-out 1s 1 fadeInLeft;
       animation-fill-mode: forwards;
@@ -121,6 +144,11 @@ b, strong {
     }
   }
 
+  &-image {
+    margin: 0 auto;
+    margin-bottom: 14px;
+  }
+
   &-body {
     max-width: 680px;
     margin-left: 64px;
@@ -133,15 +161,6 @@ b, strong {
       animation: 500ms ease-out 200ms 1 fadeInBottom;
       animation-fill-mode: forwards;
     }
-  }
-
-  &-image {
-    background-image: url('./assets/d@2x.png');
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    margin-bottom: 14px;
   }
 
   &-signature {

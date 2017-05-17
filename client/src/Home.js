@@ -36,6 +36,28 @@ class TextInput extends Component {
   }
 }
 
+const makeCircle = (size) => ({
+  width: size,
+  height: size,
+  borderRadius: size / 2,
+});
+
+const HERO_OUTER_RING_WIDTH = 10;
+const HERO_INNER_RING_WIDTH = 5;
+
+const HeroAvatar = ({ className, size }) => {
+  const outerStyle = makeCircle(size);
+  const innerStyle = makeCircle(size - HERO_OUTER_RING_WIDTH);
+  const imageStyle = makeCircle(size - HERO_OUTER_RING_WIDTH - HERO_INNER_RING_WIDTH);
+  return (
+    <div className={cx(className, 'HeroAvatar-outerRing')} style={outerStyle}>
+      <div className="HeroAvatar-innerRing" style={innerStyle}>
+        <div className="HeroAvatar-image" style={imageStyle} />
+      </div>
+    </div>
+  )
+}
+
 class Home extends Component {
 
   state = {
@@ -58,7 +80,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <div className="Home-header">
-          <div className="Home-image" />
+          <HeroAvatar className="Home-image" size={200}/>
           <p></p>
           { !this.state.submitted ? (
             <form className="Home-form">
