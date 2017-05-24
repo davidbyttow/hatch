@@ -138,7 +138,7 @@ class Home extends Component {
             David Byttow
           </p>
           <p>
-            Join me on this journey and follow me on Twitter <a href="https://twitter.com/davidbyttow">@davidbyttow</a>.
+            Join me on this journey and follow me on Twitter <a href="https://twitter.com/davidbyttow" target="_new">@davidbyttow</a>.
           </p>
         </div>
       </div>
