@@ -5,9 +5,12 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "classnames": "^2.2.5",
+    "firebase": "^4.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-input-autosize": "^1.1.4",
     "react-router-dom": "^4.1.1",
+    "react-textarea-autosize": "^5.0.6",
     "styled-components": "^2.0.0"
   },
   "devDependencies": {

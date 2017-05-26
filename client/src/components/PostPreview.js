@@ -59,12 +59,7 @@ class PostPreview extends Component {
     const url = `/post/${post.id}`;
     return (
       <Container>
-        <PersonLockup
-          avatarUrl={person.avatarUrl}
-          name={person.name}
-          twitterHandle={person.twitterHandle}
-          verified={person.verified}
-        />
+        <PersonLockup person={person} />
         <Link to={url}>
           <PostTitle>{post.title}</PostTitle>
           <PostText>{post.text}</PostText>

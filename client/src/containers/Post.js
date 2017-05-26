@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import PersonLockup from '../components/PersonLockup';
 
-const Container = styled.div`
+export const PostLayout = styled.div`
   display: flex;
   flex-direction: column;
   width: 760px;
@@ -13,7 +13,7 @@ const Container = styled.div`
   background-color: white;
 `;
 
-const PostTitle = styled.h2`
+export const PostTitle = styled.h2`
   letter-spacing: -0.1px;
   font-size: 36px;
   line-height: 1.33;
@@ -22,7 +22,7 @@ const PostTitle = styled.h2`
   opacity: 0.9;
 `;
 
-const PostText = styled.p`
+export const PostText = styled.p`
   font-size: 15px;
   line-height: 24px;
   color: #8b99a6;
@@ -38,16 +38,11 @@ class Post extends Component {
   render() {
     const { post, person } = this.props;
     return (
-      <Container>
-        <PersonLockup
-          avatarUrl={person.avatarUrl}
-          name={person.name}
-          twitterHandle={person.twitterHandle}
-          verified={person.verified}
-        />
+      <PostLayout>
+        <PersonLockup person={person} />
         <PostTitle>{post.title}</PostTitle>
         <PostText>{post.text}</PostText>
-      </Container>
+      </PostLayout>
     );
   }
 }

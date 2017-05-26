@@ -1,10 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Page from './Page';
 import PostPreview from './components/PostPreview';
-import { db, postIds } from './fakeData';
-import { rpc } from './net';
+import { postsById, peopleById, postIds } from './fakeData';
 
 const CardList = styled.div`
   display: flex;
@@ -22,8 +21,8 @@ class HomePage extends Component {
         <CardList>
           {
             postIds.map((id) => {
-              const post = db.posts[id];
-              const person = db.persons[post.personId];
+              const post = postsById[id];
+              const person = peopleById[post.personId];
               return (<PostPreview
                 key={id}
                 post={post}

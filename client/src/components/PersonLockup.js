@@ -38,12 +38,13 @@ const Badge = styled(VerifiedBadge)`
 
 class PersonLockup extends Component {
   render() {
+    const { person } = this.props;
     return (
-      <PersonLockupStyle onClick={() => window.open(`https://twitter.com/${this.props.twitterHandle}`)}>
-        <Avatar url={this.props.avatarUrl} />
+      <PersonLockupStyle onClick={() => window.open(`https://twitter.com/${person.twitterHandle}`)}>
+        <Avatar url={person.avatarUrl} />
         <PersonInfo>
-          <PersonName>{this.props.name}{this.props.verified && <Badge />}</PersonName>
-          <PersonTwitterHandle>{this.props.twitterHandle}</PersonTwitterHandle>
+          <PersonName>{person.name}{person.verified && <Badge />}</PersonName>
+          <PersonTwitterHandle>{person.twitterHandle}</PersonTwitterHandle>
         </PersonInfo>
       </PersonLockupStyle>
     );
