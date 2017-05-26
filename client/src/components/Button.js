@@ -1,4 +1,3 @@
-import cx from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
 

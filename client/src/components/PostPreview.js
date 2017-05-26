@@ -1,56 +1,9 @@
-import cx from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
-import Avatar from './Avatar';
+import PersonLockup from './PersonLockup';
 import LikeButton from './LikeButton';
-import VerifiedBadge from './VerifiedBadge';
-
-const PersonLockupStyle = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-`;
-
-const PersonInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 12px;
-`;
-
-const PersonName = styled.span`
-  color: #2c3339;
-  font-size: 14px;
-  font-weight: bold;
-  display: flex;
-  flex: 1;
-  align-items: center;
-`;
-
-const PersonTwitterHandle = styled.span`
-  font-size: 12px;
-  color: #8b99a6;
-  opacity: 0.9;
-`;
-
-const Badge = styled(VerifiedBadge)`
-  margin-left: 6px;
-`
-
-class PersonLockup extends Component {
-  render() {
-    return (
-      <PersonLockupStyle onClick={() => window.open(`https://twitter.com/${this.props.twitterHandle}`)}>
-        <Avatar url={this.props.avatarUrl} />
-        <PersonInfo>
-          <PersonName>{this.props.name}{this.props.verified && <Badge />}</PersonName>
-          <PersonTwitterHandle>{this.props.twitterHandle}</PersonTwitterHandle>
-        </PersonInfo>
-      </PersonLockupStyle>
-    );
-  }
-}
 
 const Container = styled.div`
   display: flex;
@@ -95,7 +48,7 @@ const EndorsementText = styled.div`
   }
 `;
 
-class PostCard extends Component {
+class PostPreview extends Component {
   static propTypes = {
     person: PropTypes.object.isRequired,
     post: PropTypes.object.isRequired,
@@ -103,6 +56,7 @@ class PostCard extends Component {
 
   render() {
     const { post, person } = this.props;
+    const url = `/post/${post.id}`;
     return (
       <Container>
         <PersonLockup
@@ -111,7 +65,7 @@ class PostCard extends Component {
           twitterHandle={person.twitterHandle}
           verified={person.verified}
         />
-        <Link to="/post">
+        <Link to={url}>
           <PostTitle>{post.title}</PostTitle>
           <PostText>{post.text}</PostText>
         </Link>
@@ -125,4 +79,4 @@ class PostCard extends Component {
   }
 }
 
-export default PostCard;
+export default PostPreview;

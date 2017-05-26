@@ -4,16 +4,16 @@ import {
   Route,
 } from 'react-router-dom'
 
-import Home from './Home';
-import Post from './Post';
+import HomePage from './HomePage';
+import PostPage from './PostPage';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={Home}/>
-          <Route path="/post" component={Post}/>
+          <Route exact path="/" component={HomePage}/>
+          <Route path="/post/:id" component={PostPage}/>
         </div>
       </Router>
     );
