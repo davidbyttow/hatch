@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import TwitterLoginButton from './components/TwitterLoginButton';
 
-import logoUrl from './assets/hmmm@2x.png';
+import logoUrl from './assets/hatch@2x.png';
 
 const Container = styled.div`
   max-width: 1200px;
@@ -21,7 +21,6 @@ const Header = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 104px;
   height: 40px;
 `;
 
