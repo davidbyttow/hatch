@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import styled from 'styled-components';
 
 import Button from './Button';
-
 import twitterUrl from '../assets/icon-twitter@2x.png';
+import { signInWithPopup } from '../core/auth';
 
-const Container = styled(Button)`
+const LoginButton = styled(Button)`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -34,11 +34,11 @@ const Text = styled.div`
 class TwitterLoginButton extends Component {
   render() {
     return (
-      <Container>
+      <LoginButton onClick={() => signInWithPopup()}>
         <Logo src={twitterUrl} />
         <Divider />
         <Text>SIGN IN WITH TWITTER</Text>
-      </Container>
+      </LoginButton>
     )
   }
 };
